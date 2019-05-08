@@ -12,7 +12,7 @@ class Timer extends React.Component {
             sec = "0" + sec;
         }
         return (
-            <div>
+            <div align="center">
                 <h1 className={this.props.class}>{min} : {sec}</h1>
             </div>
         )

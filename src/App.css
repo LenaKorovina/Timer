@@ -1,5 +1,5 @@
 * {
-    padding-top: 10px;
+    padding-top: 1px;
     background-color: #180625;
     color: #ffffff;
 
@@ -7,12 +7,16 @@
 
 .timer {
     padding: 1em;
+    margin: 1em;
+    width: 10em;
     text-align: center;
     border: 4px double #ffffff;
 }
 
 .timerRed {
     padding: 1em;
+    margin: 1em;
+    width: 10em;
     text-align: center;
     border: 4px double #ffffff;
     color: red;
@@ -21,6 +25,8 @@
 
 .timerRedBlink {
     padding: 1em;
+    margin: 1em;
+    width: 10em;
     text-align: center;
     border: 4px double #ffffff;
     color: red;
@@ -44,7 +50,11 @@
     to { opacity: 0.0; }
 }
 .time {
-    width: 150px;
+    font-size: 1.5em;
+    padding: 1em;
+    margin: 1em;
+    width: 10em;
+    text-align: center;
     border: 4px double #ffffff;
 }
 
@@ -52,26 +62,23 @@
     font-family: 'Akronim', cursive;
 }
 
-.container {
+.cont {
     text-align: center;
     padding: 1em;
 }
 
 .speed {
     text-align: center;
-    padding: 1em;
     margin: 1em;
 }
 
-.btn {
-    margin: 3px;
-}
 
 .btn.btn-primary {
     border-radius: 10%;
     border: 1px double #180625;
     background: linear-gradient(to top, #780cff, #180625);
-
+    padding: 0.5em;
+    font-size: 1.2em;
     text-shadow: none;
     width: 110px;
     margin: 5px;
@@ -86,7 +93,10 @@
 
 .pause_btn {
     text-align: center;
-    padding: 1em;
+}
+
+.countdown_txt{
+    display: inline;
 }
 
 .comments {

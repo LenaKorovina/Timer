@@ -27,7 +27,7 @@ class App extends Component {
 
     updateStartTime = (value) => {
         this.setState({startTime: value, currentTime: value});
-        if (this.timerID===undefined){
+        if (this.timerID === undefined) {
             this.timerID = setInterval(this.tick, 1000);
         }
     };
@@ -41,21 +41,25 @@ class App extends Component {
         if (this.state.currentTime > 0 && !this.state.isPaused) {
             this.setState({currentTime: this.state.currentTime - 1});
         }
-        if (this.state.currentTime < this.state.startTime / 2) {
+        if (this.state.currentTime >= this.state.startTime / 2) {
+            this.setState({text: ""});
+        } else if (this.state.currentTime < this.state.startTime / 2 && this.state.currentTime !== 0) {
             this.setState({text: "More than halfway there!"});
-            if (this.state.currentTime === 0) {
-                this.setState({text: "Time’s up!"});
-            }
-            if (this.state.currentTime < 20) {
-                this.setState({timerClass: "timerRed"});
-            }
-            if (this.state.currentTime < 10 && this.state.currentTime!==0) {
-                this.setState({timerClass: "timerRedBlink"});
-            }
-
+        } else {
+            this.setState({text: "Time’s up!"});
         }
 
+        if (this.state.currentTime > 20) {
+            this.setState({timerClass: "timer"});
+        } else if (this.state.currentTime > 10) {
+            this.setState({timerClass: "timerRed"});
+        } else if (this.state.currentTime !== 0) {
+            this.setState({timerClass: "timerRedBlink"});
+        } else {
+            this.setState({timerClass: "timer"});
+        }
     };
+
     pause = () => {
         this.setState({isPaused: !this.state.isPaused})
 
